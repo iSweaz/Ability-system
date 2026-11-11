@@ -1,15 +1,15 @@
 extends Resource
-class_name AbilitiesList
+class_name Scan
 #made by Alexande Lesur
 
 
-@export var abilities: Dictionary[String,String]
+@export var data: Dictionary[String,String]
 
-func scan_quests(path: String = "res://Resources/Abilities/") -> void:
-	abilities.clear()
+func scan_files(path: String) -> void:
+	data.clear()
 	var dir := DirAccess.open(path)
 	if not dir:
-		push_warning("Abilities List: dossier introuvable '%s" % path)
+		push_warning("Scan: dossier introuvable '%s'" % path)
 		return
 	
 	for file in dir.get_files():
@@ -18,11 +18,10 @@ func scan_quests(path: String = "res://Resources/Abilities/") -> void:
 		var full_path := path + file
 		var id := ResourceLoader.get_resource_uid(full_path)
 		if id == ResourceUID.INVALID_ID:
-			push_warning("AbilitiesList: uid introuvable pour '%s'" % full_path)
+			push_warning("Scan: uid introuvable pour '%s'" % full_path)
 			continue
 		var key := file.replace(".tres", "")
-		abilities[key] = ResourceUID.id_to_text(id)
+		data[key] = ResourceUID.id_to_text(id)
 		
 	for subdir in dir.get_directories():
-		scan_quests(path + subdir + "/")
-
+		scan_files(path + subdir + "/")

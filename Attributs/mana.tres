@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Attribut" format=3 uid="uid://qsccmvkkq500"]
+
+[ext_resource type="Script" uid="uid://bbp160gqgblm5" path="res://scripts/attribut.gd" id="1_ifmi5"]
+
+[resource]
+script = ExtResource("1_ifmi5")
+name = "Mana"
+max_value = 200.0
+metadata/_custom_type_script = "uid://bbp160gqgblm5"
