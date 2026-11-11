@@ -1,0 +1,15 @@
+[gd_resource type="NoiseTexture2D" format=3 uid="uid://mw3evsbn4w1u"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d1dag"]
+noise_type = 3
+seed = 7946
+frequency = 0.0557
+offset = Vector3(1000, 474.58, 1000)
+fractal_type = 2
+
+[resource]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_d1dag")
+seamless = true
+invert = true
+in_3d_space = true
