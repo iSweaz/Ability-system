@@ -1,11 +1,11 @@
-## Ability System
+# Ability System
 
-# Attribut
+## Attribut
 - Vie
 - Mana
 - Vitesse
 
-# Competences
+## Competences
 - Projectile
     - Radius
     - Speed
@@ -14,7 +14,7 @@
     - Animation / Shader
 - Melee ?
 
-# Effect 
+## Effect 
 - Brulé
 - Gelé
 - Ralentit
